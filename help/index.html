@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type=text/css href="estilo.css">
+        <script src="jquery.js" charset="utf-8"></script>
+        <title>Campainha Automatizada</title>
+
+
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            $('.nav a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                var id = $(this).attr('href'),
+                targetOffset = $(id).offset().top;
+
+                $('html, body').animate({
+                    scrollTop: targetOffset - 100
+                }, 500);
+            });
+        </script>
+        <div class="container">
+            <div class="lateral">
+                    <h2>Campainha Automatizada</h2>
+                    <img class="imagem_texto" src="img/robo_clock.png" alt="Logo campa automatizada">
+                    <ul>
+                        <a href="#1"><li>Introdução</li></a>
+                        <a href="#2"><li>Forma de utilização</li></a>
+                        <a href="#3"><li>Instalação</li></a>
+                        <a href="#4"><li>Configuração</li></a>
+                        <a href="#contato"><li>Contato</li></a>
+                    </ul>
+            </div>
+            <div class="conteudo">
+
+                    <a id="1"></a><h2>Introdução</h2>
+                    <p>O sistema de campainha automatizada surgiu da necessidade de um sinal sonoro para marcação do início, troca e intevalos de aulas em um ambiente escolar e  sem que haja a necessidade de uma pessoa para realizar esse trabalho manualmente,
+                    assim os toques sonoros são realizados sempre nos horários corretos com exatidão.</p>
+                    <p>Em sua primeira versão o sistema foi implementado com toque musical em uma lista de horários determinados. Na sua segunda versão, o sistema além de emitir o toque musical,
+                    também aciona um dispositivo elétrico que alimenta uma sirene (motor) de acordo com a mesma lista de horários.
+                    <p>O sistema tem um visual de relógios (hora atual, próximo toque e tempo restante) em formato grande em um monitor de computador para ser usado como um relógio de parede.</p>
+                    <img class="imagem_texto" src="img/sala_professores88.jpg" alt="Sala dos professores">
+                    <a id="2"></a><h2>Formas de utilização</h2>
+                    <p>O sistema é composto de um software para sistema operacioanal Windows (a partir da versão 98) e um dispositivo em hardware ligado a porta USB do computador.
+                    Os requisitos para executar o sistema são: Computador básico com Sistema Operacional Windows
+                    (Processdor de 200Mhz ou superior, 128MB de RAM e Placa de som). O disposivo USB funciona como um interruptor para o motor da sirene de toque, bastando fazer a instalação elétrica adequada.</p>
+                    <img class="imagem_texto" src="img/Campa_tele1.jpg" alt="Tela incial da campa">
+                    <a id="3"></a><h2>Instalação</h2>
+                    <p>Faça o <a href="campa.zip">download</a> do arquivo zip contendo os arquivos do programa. Extraia em uma pasta e crie um atalho para execução. Os arquivos usados são apenas o "campa.exe" e "horários.ini" que deve estar no mesmo diretório.</p>
+                    <img class="imagem_texto" src="img/tela_extract_zip.png" alt="Extraindo arquivo zip">
+
+                    <a id="4"></a><h2>Configuração</h2>
+                    <p>As opções de configuração do software estão em um menu suspenso que é acessado com o botão direito do mouse sobre qualquer parte na tela do sistema.
+                    Clique com botão direito e depois em configurações.</p>
+                    <img class="imagem_texto" src="img/Campa_tela2_menu.jpg" alt="Tela incial da campa">
+
+                    <p>Nessa janela de configuração é possível definir as configurações da porta de comunicação serial com o dispositivo e o tempo de acionamento da sirene.
+                        Também é possível escolher o arquivo de áudio que será tocado nos horários. Note que não é possível usar um arquivo de som para cada horário. Em todos os horários o arquivo de som executado será o mesmo.</p>
+                    <img class="imagem_texto" src="img/Campa_tela3.jpg" alt="Janela de configuração">
+                    <img class="imagem_texto" src="img/Campa_tela4.jpg" alt="Janela de configuração da porta serial">
+
+                    <p>Os horários de toques estão gravados no arquivo "horarios.ini" e devem ser listados em ordem crescente. Sempre após alguma modificação o mesmo deve ser salvo.</p>
+                    <img class="imagem_texto" src="img/Campa_tela5.jpg" alt="Lista de horários">
+
+
+                    <a id="contato"><h2>Contato</h2></a>
+                    <p>Esperamos que o sistema venha a facilitar o trabalho do dia-a-dia em um ambiente que haja necessidade de toques de horários programados.</p>
+                    <p>Mais informações com o desenvolvedor do sistema, prof. Robson Pires Borges através dos contatos: Telefone celular: +55 (89) 9 9424 1488 / e-mail: robsonborges@ifpi.edu.br
+                    </p>
+
+                    <hr>
+                    <p class="center">Sistema de Campainha Automatizada - V1:2010 - V3:2017 / Registrado sob o número: BR512016001628-0</p>
+
+
+            </div>
+        </div>
+
+    </body>
+
+
+</html>

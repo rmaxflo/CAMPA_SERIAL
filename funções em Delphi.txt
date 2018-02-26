@@ -1,0 +1,58 @@
+VAR
+
+BIN_TEXT, PORTA: String;
+Dados:byte;
+
+
+implementation
+
+
+// FUNÇÕES PARA ATIVAÇÃO DOS LEDS NA PORTA PARALELA.
+procedure Escrever(endereco:integer;valor:byte); stdcall; external 'inpout32.dll' name 'Out32';
+
+function Ler(endereco:integer):byte; stdcall; external 'inpout32.dll' name 'Inp32';
+
+function BinToInt(Value: string): Integer;
+var
+   i, iValueSize: Integer;
+begin
+  Result := 0;
+	iValueSize := Length(Value);
+	for i := iValueSize downto 1 do
+	   if Value[i] = '1' then
+		   Result := Result + (1 shl (iValueSize - i));
+end;  // end bittoin
+
+// FIM DAS FUNÇÕES
+
+
+{$R *.dfm}
+
+
+
+
+Var
+{ Variavel usada para enviar o endereços de bits para porta paralela.
+   isto indica para qual o led, ou quais os leds irão acender. 0 - apacado - 1 ligado}
+endereco:integer;
+begin
+    
+	//tocando um som na placa de áudio	
+	MediaPlayer1.Play;  
+
+	// enviando dados para porta paralela
+	endereco := StrToInt('$' + Trim(PORTA));
+	dados := BinToInt(Trim('11111111'));
+  	Escrever(endereco,dados);
+
+	//Espera 10 segundos e desliga o led. -MODIFICAR ESSA FUNÇÃO... MUITO RUIM.
+	Sleep(10000);
+	endereco := StrToInt('$' + Trim(PORTA));
+	dados := BinToInt(Trim('00000000'));
+  	Escrever(endereco,dados);
+
+end;
+
+
+
+PORTA:='378';

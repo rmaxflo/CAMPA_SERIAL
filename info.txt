@@ -1,0 +1,2 @@
+Deve haver o arquivo campa.mp3 na mesma pasta do programa, caso contrário ele 
+não abrirá (Ainda a ser resolvido no código fonte)
